@@ -11,21 +11,12 @@ import { ProductResponseModel } from 'src/app/models/productResponseModel';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
-
   products: Product[] = [];
-  apiUrl = "https://localhost:44383/api/products/getall";
-  productResponseModel:ProductResponseModel={
-    data : this.products,
-    message:"",
-    success:true
-  }
-
-
+  apiUrl = 'https://localhost:44383/api/products/getall';
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    console.log("init çalıştı");
+    this.getProducts();
   }
 
   getProducts() {
